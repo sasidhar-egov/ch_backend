@@ -61,7 +61,7 @@ User: ${text}`
   } catch (error) {
     console.error('Gemini API error:', error.response?.data || error.message);
     res.status(500).json({ 
-      error: 'Error communicating with Gemini API', 
+      error: `Error communicating with Gemini API: ${error.message || 'Unknown error'}`,
       details: error.response?.data || error.message 
     });
   }
